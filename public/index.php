@@ -7,7 +7,7 @@ use Dotenv\Dotenv;
 require __DIR__ . '/../vendor/autoload.php';
 
 if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv::createImmutable(dirname(__DIR__));
+    $dotenv = Dotenv::createUnsafeImmutable(dirname(__DIR__));
     $dotenv->load();
 }
 

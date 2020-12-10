@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Psr\Http\Message\ResponseInterface as Response;
+use Slim\Http\Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 class DefaultController extends Controller
@@ -10,8 +10,6 @@ class DefaultController extends Controller
 
     public function home(Request $request, Response $response, array $args)
     {
-        echo "Hello World";
-
-        return $response->withStatus(200);
+        return $response->write("Hello World")->withStatus(200);
     }
 }
