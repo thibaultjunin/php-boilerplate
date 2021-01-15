@@ -5,7 +5,7 @@ use DI\ContainerBuilder;
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
         "settings" => [
-            'displayErrorDetails' => isset($_ENV['ENVIRONMENT']) && $_ENV['ENVIRONMENT'] !== "prod" && $_ENV['ENVIRONMENT'] !== "production",
+            'displayErrorDetails' => !(getenv('ENVIRONMENT') == "prod" || getenv('ENVIRONMENT') == "production"),
             // Add required settings here
         ]
     ]);

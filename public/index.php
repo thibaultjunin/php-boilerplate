@@ -13,7 +13,7 @@ if (file_exists(__DIR__ . '/../.env')) {
 
 $containerBuilder = new ContainerBuilder();
 
-if (!isset($_ENV['ENVIRONMENT']) || $_ENV['ENVIRONMENT'] == "prod" || $_ENV['ENVIRONMENT'] == "production") {
+if (getenv('ENVIRONMENT') == "prod" || getenv('ENVIRONMENT') == "production") {
     $containerBuilder->enableCompilation(__DIR__ . '/../cache/container');
 }
 
